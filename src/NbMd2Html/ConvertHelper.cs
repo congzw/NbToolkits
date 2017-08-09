@@ -7,7 +7,7 @@ namespace NbMd2Html
     {
         public void ProcessFiles(string currentFolder, bool appendOnly)
         {
-            var mdFiles = Directory.GetFiles(currentFolder, "*.*", SearchOption.TopDirectoryOnly);
+            var mdFiles = Directory.GetFiles(currentFolder, "*.md", SearchOption.TopDirectoryOnly);
             Console.WriteLine("total find: {0}", mdFiles.Length);
             Console.WriteLine("=================");
 
