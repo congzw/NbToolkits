@@ -92,7 +92,7 @@
   <ItemGroup>
     <Content Include="scripts\nbcloud\DeleteSiteAndOrgs_FindOrgIdTables.sql" />
     <Content Include="scripts\nbcloud\DeleteSiteAndOrgs_FindSiteIdTables.sql" />
-    <Content Include="scripts\nbcloud\FindAllUniqueKeys.sql" />
+    <Content Include="scripts\nbcloud\UniqueKeysCreateAndFind.sql" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
