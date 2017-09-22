@@ -48,8 +48,7 @@ namespace NbCopyToFolders
 
                 foreach (var copyToFolder in copyToFoldersArray)
                 {
-                    var folderPath = MyPathHelper.GetFolderPath(copyToFolder);
-                    MyIOHelper.CopyFolder(copyFromFolder, folderPath);
+                    MyIOHelper.CopyFolder(copyFromFolder, copyToFolder);
                 }
                 MessageBox.Show(@"Copy Complete!");
             }
@@ -61,10 +60,9 @@ namespace NbCopyToFolders
 
         private bool TryCheckFolder(string folder)
         {
-            var folderPath = MyPathHelper.GetFolderPath(folder);
-            if (!Directory.Exists(folderPath))
+            if (!Directory.Exists(folder))
             {
-                MessageBox.Show(@"路径不存在:" + folderPath);
+                MessageBox.Show(@"路径不存在:" + folder);
                 return false;
             }
             return true;
