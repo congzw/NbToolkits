@@ -32,6 +32,7 @@
             this.txtSln = new System.Windows.Forms.TextBox();
             this.btnSwitch = new System.Windows.Forms.Button();
             this.txtMessage = new System.Windows.Forms.TextBox();
+            this.cbxNestMaster = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // label1
@@ -72,14 +73,25 @@
             this.txtMessage.Location = new System.Drawing.Point(12, 12);
             this.txtMessage.Multiline = true;
             this.txtMessage.Name = "txtMessage";
-            this.txtMessage.Size = new System.Drawing.Size(560, 147);
+            this.txtMessage.Size = new System.Drawing.Size(560, 139);
             this.txtMessage.TabIndex = 9;
+            // 
+            // cbxNestMaster
+            // 
+            this.cbxNestMaster.AutoSize = true;
+            this.cbxNestMaster.Location = new System.Drawing.Point(12, 168);
+            this.cbxNestMaster.Name = "cbxNestMaster";
+            this.cbxNestMaster.Size = new System.Drawing.Size(156, 16);
+            this.cbxNestMaster.TabIndex = 10;
+            this.cbxNestMaster.Text = "nested master for tfvc";
+            this.cbxNestMaster.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(584, 223);
+            this.Controls.Add(this.cbxNestMaster);
             this.Controls.Add(this.txtMessage);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtSln);
@@ -98,5 +110,6 @@
         private System.Windows.Forms.TextBox txtSln;
         private System.Windows.Forms.Button btnSwitch;
         private System.Windows.Forms.TextBox txtMessage;
+        private System.Windows.Forms.CheckBox cbxNestMaster;
     }
 }

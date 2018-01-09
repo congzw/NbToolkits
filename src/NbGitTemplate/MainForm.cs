@@ -36,17 +36,33 @@ namespace NbGitTemplate
             PrintMessage("开始创建...");
             this.btnSwitch.Enabled = false;
             this.txtSln.Enabled = false;
-            await Creating(slnName);
+            await Creating(slnName, this.cbxNestMaster.Checked);
             this.btnSwitch.Enabled = true;
             this.txtSln.Enabled = true;
             await Task.FromResult(0);
         }
 
-        private async Task Creating(string slnName)
+        private async Task Creating(string slnName, bool nestedMaster)
         {
             //unzip file
             var packageHelper = new PackageHelper();
             var currentFolder = Path.GetFullPath(".\\");
+            
+            if (nestedMaster)
+            {
+                //currentFolder = currentFolder + slnName + "\\master\\" + slnName + "\\";
+
+                currentFolder = currentFolder + slnName;
+                packageHelper.DeleteFolder(currentFolder);
+                Directory.CreateDirectory(currentFolder);
+
+                currentFolder = currentFolder + "\\master";
+                packageHelper.DeleteFolder(currentFolder);
+                Directory.CreateDirectory(currentFolder);
+                currentFolder = currentFolder.TrimEnd('\\') + "\\";
+            }
+
+
             var extractFolder = currentFolder + templateName;
             if (Directory.Exists(extractFolder))
             {
@@ -62,15 +78,17 @@ namespace NbGitTemplate
 
             var memoryStream = new MemoryStream(Resources.SlnTemplate);
             packageHelper.UnPackage(memoryStream, currentFolder);
+            
             //change NbTemplate.sln name
-            var slnFileNameTemplate = @"SlnTemplate\src\" + templateName + ".sln";
-            var slnFileName = @"SlnTemplate\src\" + slnName + ".sln";
+            var slnFileNameTemplate = currentFolder + @"SlnTemplate\src\" + templateName + ".sln";
+            var slnFileName = currentFolder + @"SlnTemplate\src\" + slnName + ".sln";
             PrintMessage(string.Format("Change sln: {0} => {1}", slnFileNameTemplate, slnFileName));
             packageHelper.TryChangeFileName(slnFileNameTemplate, slnFileName);
 
             //change folder name
-            PrintMessage(string.Format("Change Folder: {0} => {1}", templateName, slnName));
-            packageHelper.TryChangeFolderName(templateName, slnName);
+            PrintMessage(string.Format("Change Folder: {0} => {1}", currentFolder + templateName, currentFolder+slnName));
+            packageHelper.TryChangeFolderName(currentFolder + templateName, currentFolder + slnName);
+
 
             PrintMessage(slnName + " => 创建完成");
         }
