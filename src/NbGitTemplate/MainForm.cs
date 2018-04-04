@@ -91,6 +91,7 @@ namespace NbGitTemplate
 
 
             PrintMessage(slnName + " => 创建完成");
+            await Task.FromResult(0);
         }
 
         private void PrintMessage(string message)
