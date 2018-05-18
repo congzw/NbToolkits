@@ -4,5 +4,6 @@
 
 NbGitTemplate-1.1 
 
+Add .nuget/Nuget.Config to fix nuget&tfs bug
 Change readme.md content.
 Fix nuget.config version problems.
