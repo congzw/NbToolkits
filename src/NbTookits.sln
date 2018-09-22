@@ -27,6 +27,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NbCopyToFolders", "NbCopyTo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NhibernateMapEasy", "NhibernateMapEasy\NhibernateMapEasy.csproj", "{3EA18A08-9DA1-4865-8863-DEE9645A1DE1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TemplateEasy", "TemplateEasy\TemplateEasy.csproj", "{99C53AB9-6B92-48A9-BFDE-DDAAC60D2409}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -61,6 +63,10 @@ Global
 		{3EA18A08-9DA1-4865-8863-DEE9645A1DE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3EA18A08-9DA1-4865-8863-DEE9645A1DE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3EA18A08-9DA1-4865-8863-DEE9645A1DE1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99C53AB9-6B92-48A9-BFDE-DDAAC60D2409}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99C53AB9-6B92-48A9-BFDE-DDAAC60D2409}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99C53AB9-6B92-48A9-BFDE-DDAAC60D2409}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99C53AB9-6B92-48A9-BFDE-DDAAC60D2409}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -73,5 +79,6 @@ Global
 		{EC113171-05B6-498C-9C0F-32FF02871E0F} = {DCD3CE28-D4BD-456D-95EA-E5B865774F17}
 		{0069DF5F-6DB3-43CB-84C8-BE51BCF8BFE7} = {DCD3CE28-D4BD-456D-95EA-E5B865774F17}
 		{3EA18A08-9DA1-4865-8863-DEE9645A1DE1} = {DCD3CE28-D4BD-456D-95EA-E5B865774F17}
+		{99C53AB9-6B92-48A9-BFDE-DDAAC60D2409} = {DCD3CE28-D4BD-456D-95EA-E5B865774F17}
 	EndGlobalSection
 EndGlobal
