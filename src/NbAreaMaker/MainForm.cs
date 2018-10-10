@@ -92,13 +92,15 @@ namespace NbAreaMaker
 
 
                 var prefix = MyConfigHelper.Resolve().GetAppSettingValue("AreaPrex", "ZQNB");
+                var company = MyConfigHelper.Resolve().GetAppSettingValue("Company", "ZQNB");
                 //Properties\AssemblyInfo.cs
                 string assemblyInfoFilePath = string.Format("{0}\\Properties\\AssemblyInfo.cs", outPutDir);
                 string assemblyInfoFileContent = MyIOHelper.ReadAllText(assemblyInfoFilePath);
                 string newAssemblyInfoFileContent = assemblyInfoFileContent
                     .Replace(templateName, areaName)
                     .Replace(guidPlaceHolder, Guid.NewGuid().ToString("D").ToUpper())
-                    .Replace("Yyy", prefix);
+                    .Replace("Yyy", prefix)
+                    .Replace("Zzz", company);
                 if (!MyIOHelper.TrySaveFileWithAddAccessRule(assemblyInfoFilePath, newAssemblyInfoFileContent, null,
                     out message))
                 {

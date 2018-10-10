@@ -64,6 +64,9 @@
     <Compile Include="_Common\MyProjectHelper.cs" />
     <Compile Include="_Common\ResolveAsSingleton.cs" />
     <Compile Include="_Common\UtilsLogger.cs" />
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
