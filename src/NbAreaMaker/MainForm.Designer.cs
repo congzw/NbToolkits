@@ -39,6 +39,8 @@
             this.txtAreaName = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.txtProjectPrefix = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.groupBox3.SuspendLayout();
@@ -112,22 +114,24 @@
             // 
             // txtAreaName
             // 
-            this.txtAreaName.Location = new System.Drawing.Point(123, 20);
+            this.txtAreaName.Location = new System.Drawing.Point(324, 20);
             this.txtAreaName.Name = "txtAreaName";
-            this.txtAreaName.Size = new System.Drawing.Size(285, 21);
+            this.txtAreaName.Size = new System.Drawing.Size(84, 21);
             this.txtAreaName.TabIndex = 43;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(46, 23);
+            this.label5.Location = new System.Drawing.Point(277, 23);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(65, 12);
+            this.label5.Size = new System.Drawing.Size(41, 12);
             this.label5.TabIndex = 44;
-            this.label5.Text = "模块名称：";
+            this.label5.Text = "模块：";
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.label1);
+            this.groupBox3.Controls.Add(this.txtProjectPrefix);
             this.groupBox3.Controls.Add(this.txtDesc);
             this.groupBox3.Controls.Add(this.label4);
             this.groupBox3.Controls.Add(this.txtAreaName);
@@ -138,6 +142,22 @@
             this.groupBox3.TabIndex = 38;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "输入区";
+            // 
+            // txtProjectPrefix
+            // 
+            this.txtProjectPrefix.Location = new System.Drawing.Point(123, 20);
+            this.txtProjectPrefix.Name = "txtProjectPrefix";
+            this.txtProjectPrefix.Size = new System.Drawing.Size(84, 21);
+            this.txtProjectPrefix.TabIndex = 45;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(70, 23);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(41, 12);
+            this.label1.TabIndex = 46;
+            this.label1.Text = "项目：";
             // 
             // MainForm
             // 
@@ -171,6 +191,8 @@
         private System.Windows.Forms.TextBox txtAreaName;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.CheckBox checkOpenDir;
+        private System.Windows.Forms.TextBox txtProjectPrefix;
+        private System.Windows.Forms.Label label1;
 
     }
 }

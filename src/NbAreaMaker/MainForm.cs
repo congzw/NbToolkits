@@ -11,8 +11,11 @@ namespace NbAreaMaker
         public MainForm()
         {
             InitializeComponent();
+            prefix = MyConfigHelper.Resolve().GetAppSettingValue("AreaPrex", "ZQNB");
+            txtProjectPrefix.Text = prefix;
         }
 
+        private string prefix;
         private const string templateName = "Xxx";
         private string dirPath;
         private void MainForm_Load(object sender, EventArgs e)
@@ -90,8 +93,7 @@ namespace NbAreaMaker
                 //string viewModelsFolder = string.Format("{0}\\{1}", outPutDir, "ViewModels");
                 //MyIOHelper.TryCreateFolder(viewModelsFolder);
 
-
-                var prefix = MyConfigHelper.Resolve().GetAppSettingValue("AreaPrex", "ZQNB");
+                prefix = this.txtProjectPrefix.Text.Trim();
                 var company = MyConfigHelper.Resolve().GetAppSettingValue("Company", "ZQNB");
                 //Properties\AssemblyInfo.cs
                 string assemblyInfoFilePath = string.Format("{0}\\Properties\\AssemblyInfo.cs", outPutDir);
