@@ -32,6 +32,7 @@
             this.btnOk = new System.Windows.Forms.Button();
             this.cbxEncrypt = new System.Windows.Forms.CheckBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
+            this.cbxType = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // txtValue
@@ -75,18 +76,33 @@
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(760, 21);
             this.txtPassword.TabIndex = 13;
+            this.txtPassword.UseSystemPasswordChar = true;
+            // 
+            // cbxType
+            // 
+            this.cbxType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxType.FormattingEnabled = true;
+            this.cbxType.Items.AddRange(new object[] {
+            "Text",
+            "File"});
+            this.cbxType.Location = new System.Drawing.Point(549, 333);
+            this.cbxType.Name = "cbxType";
+            this.cbxType.Size = new System.Drawing.Size(121, 20);
+            this.cbxType.TabIndex = 14;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 361);
+            this.Controls.Add(this.cbxType);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.cbxEncrypt);
             this.Controls.Add(this.txtValue);
             this.Controls.Add(this.btnOk);
             this.Name = "MainForm";
             this.Text = "Encrypt";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -98,6 +114,7 @@
         private System.Windows.Forms.Button btnOk;
         private System.Windows.Forms.CheckBox cbxEncrypt;
         private System.Windows.Forms.TextBox txtPassword;
+        private System.Windows.Forms.ComboBox cbxType;
     }
 }
 
