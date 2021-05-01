@@ -1,0 +1,12 @@
+{
+  "Title": "认证授权接口",
+  "Description": "认证授权相关",
+  "Version": "0.5.0",
+  "Apis": [
+    {
+      "ApiPath": "/Api/Auth/Account/LoginToken",
+      "Method": "post",
+      "Summary": "用户本地账号登录（JWTToken）"
+    }
+  ]
+}
