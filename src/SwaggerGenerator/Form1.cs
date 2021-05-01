@@ -17,8 +17,14 @@ namespace SwaggerGenerator
         {
             var jsonFile = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "ApiDoc/demo.json");
             var content = File.ReadAllText(jsonFile);
-            var swaggerApiInfo = SwaggerApiDoc.ParseJson(content);
-            this.txtValue.Text = JsonConvert.SerializeObject(swaggerApiInfo, Formatting.Indented);
+            var swaggerApiInfo = SwaggerApiDoc.ParseJson(content, "App-Auth");
+
+            //this.txtValue.Text = JsonConvert.SerializeObject(swaggerApiInfo, Formatting.Indented);
+
+            var groups = TemplateHelper.Convert(swaggerApiInfo);
+            var templateProcess = TemplateHelper.TemplateProcess(groups);
+            this.txtValue.Text = templateProcess;
+
         }
     }
 }

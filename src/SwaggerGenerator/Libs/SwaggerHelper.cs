@@ -7,7 +7,7 @@ namespace SwaggerGenerator.Libs
 {
     public class SwaggerApiDoc
     {
-        public static SwaggerApiInfo ParseJson(string json)
+        public static SwaggerApiInfo ParseJson(string json, string groupName)
         {
             var docMeta = (JObject)JsonConvert.DeserializeObject(json);
 
@@ -15,8 +15,8 @@ namespace SwaggerGenerator.Libs
             var title = info["title"]?.ToString();
             var description = info["description"]?.ToString();
             var version = info["version"]?.ToString();
-            var swaggerApiInfo = SwaggerApiInfo.Create(title, description, version);
-
+            var swaggerApiInfo = SwaggerApiInfo.Create(groupName, title, description, version);
+            
             var paths = docMeta["paths"];
             foreach (var token in paths.AsEnumerable())
             {
@@ -42,15 +42,16 @@ namespace SwaggerGenerator.Libs
 
     public class SwaggerApiInfo
     {
+        public string Group { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
         public string Version { get; set; }
 
         public List<SwaggerApi> Apis { get; set; } = new List<SwaggerApi>();
 
-        public static SwaggerApiInfo Create(string title, string desc, string version)
+        public static SwaggerApiInfo Create(string group, string title, string desc, string version)
         {
-            return new SwaggerApiInfo { Title = title, Description = desc, Version = version };
+            return new SwaggerApiInfo {Group = group,Title = title, Description = desc, Version = version };
         }
     }
 
@@ -65,5 +66,4 @@ namespace SwaggerGenerator.Libs
             return new SwaggerApi {ApiPath = apiPath, Method = method, Summary = summary};
         }
     }
-
 }
