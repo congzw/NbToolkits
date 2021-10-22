@@ -33,6 +33,8 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.btnOK = new System.Windows.Forms.Button();
+            this.cbxQuotes = new System.Windows.Forms.CheckBox();
+            this.cbxJsonFormat = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -56,6 +58,8 @@
             // 
             // splitContainer1.Panel2
             // 
+            this.splitContainer1.Panel2.Controls.Add(this.cbxJsonFormat);
+            this.splitContainer1.Panel2.Controls.Add(this.cbxQuotes);
             this.splitContainer1.Panel2.Controls.Add(this.btnOK);
             this.splitContainer1.Size = new System.Drawing.Size(764, 361);
             this.splitContainer1.SplitterDistance = 296;
@@ -107,6 +111,25 @@
             this.btnOK.UseVisualStyleBackColor = true;
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
+            // cbxQuotes
+            // 
+            this.cbxQuotes.AutoSize = true;
+            this.cbxQuotes.Location = new System.Drawing.Point(139, 28);
+            this.cbxQuotes.Name = "cbxQuotes";
+            this.cbxQuotes.Size = new System.Drawing.Size(138, 16);
+            this.cbxQuotes.TabIndex = 2;
+            this.cbxQuotes.Text = "ReplaceDoubleQuotes";
+            this.cbxQuotes.UseVisualStyleBackColor = true;
+            // 
+            // cbxJsonFormat
+            // 
+            this.cbxJsonFormat.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxJsonFormat.FormattingEnabled = true;
+            this.cbxJsonFormat.Location = new System.Drawing.Point(12, 26);
+            this.cbxJsonFormat.Name = "cbxJsonFormat";
+            this.cbxJsonFormat.Size = new System.Drawing.Size(121, 20);
+            this.cbxJsonFormat.TabIndex = 3;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -117,6 +140,7 @@
             this.Text = "MainForm";
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
+            this.splitContainer1.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             this.splitContainer2.Panel1.ResumeLayout(false);
@@ -136,6 +160,8 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Button btnOK;
+        private System.Windows.Forms.CheckBox cbxQuotes;
+        private System.Windows.Forms.ComboBox cbxJsonFormat;
     }
 }
 

@@ -1,4 +1,6 @@
-﻿namespace TemplateEasy
+﻿using Newtonsoft.Json;
+
+namespace TemplateEasy
 {
     public class TemplateHelper
     {
@@ -13,6 +15,7 @@
             //    </div>
             //    <div class=""help-block inline"">必填</div>
             //</div>";
+            //var result = Replace(values, "\"", "\"\"");
             var result = Replace(values, "\"", "\"\"");
             return result;
         }
@@ -24,6 +27,19 @@
                 return string.Empty;
             }
             return values.Replace(oldValue, newValue);
+        }
+
+        public static string FormatJson(string json, int mode)
+        {
+            if (mode == 0)
+            {
+                return json;
+            }
+            if (mode == 1)
+            {
+                return JsonConvert.SerializeObject(JsonConvert.DeserializeObject(json), Formatting.None);
+            }
+            return JsonConvert.SerializeObject(JsonConvert.DeserializeObject(json), Formatting.Indented);
         }
     }
 }
