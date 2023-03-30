@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.IO;
 
 namespace CreateEmptySln
@@ -20,8 +21,9 @@ namespace CreateEmptySln
             ReplaceSlnFile(slnFilePath);
 
             Console.WriteLine("####################");
-            Console.WriteLine("Completed!, Press any key to exit!");
+            Console.WriteLine("Completed! Press any key to explore to app dir!");
             Console.Read();
+            OpenFolder(appDir);
         }
 
         static void CopyDirectory(string sourceDir, string destinationDir, bool recursive)
@@ -71,6 +73,23 @@ namespace CreateEmptySln
             else
             {
                 Console.WriteLine($"file not found: {slnFilePath}");
+            }
+        }
+
+        static void OpenFolder(string folderPath)
+        {
+            if (Directory.Exists(folderPath))
+            {
+                var startInfo = new ProcessStartInfo
+                {
+                    Arguments = folderPath,
+                    FileName = "explorer.exe"
+                };
+                Process.Start(startInfo);
+            }
+            else
+            {
+                Console.WriteLine("dir not exists: " + folderPath);
             }
         }
     }
