@@ -16,7 +16,8 @@ namespace TemplateEasy
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainForm());
+            Application.Run(new TransferForm());
+            //Application.Run(new MainForm());
         }
     }
 }
